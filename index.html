@@ -64,21 +64,6 @@
             animation: rotate-slow 40s linear infinite;
         }
 
-        .btn-primary {
-            background: var(--brand-yellow);
-            color: #1e4b8f;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px -5px rgba(250, 204, 21, 0.4);
-        }
-
-        #success-message {
-            display: none;
-        }
-
         .lang-btn {
             padding: 4px 10px;
             border-radius: 6px;
@@ -106,7 +91,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-24 items-center gap-4">
                 
-                <!-- BRAND LOGO & TEXT IN ONE LINE -->
+                <!-- BRAND LOGO & TEXT -->
                 <div class="flex items-center gap-3 sm:gap-4 min-w-0">
                     <div class="h-10 w-10 sm:h-14 sm:w-14 bg-[#1e4b8f] rounded-full flex-shrink-0 flex items-center justify-center shadow-lg p-1.5 border-2 border-slate-100">
                         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="globe-spin">
@@ -123,31 +108,23 @@
                 </div>
 
                 <div class="flex items-center space-x-4 sm:space-x-8 font-bold text-slate-600">
-                    <div class="hidden md:flex items-center space-x-6">
+                    <div class="flex items-center space-x-6 md:space-x-8">
                         <a href="#facility" class="hover:text-blue-800 transition text-xs uppercase tracking-widest" data-t="nav-facility">Facility</a>
                         <a href="#gallery" class="hover:text-blue-800 transition text-xs uppercase tracking-widest" data-t="nav-gallery">Gallery</a>
-                        
-                        <!-- PDF Download Button (Nav) -->
-                        <a href="PROFILE_SM_GLOBAL_2026.pdf" download class="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition text-[10px] uppercase tracking-widest border-l pl-6 border-slate-200">
-                            <i class="fas fa-file-pdf"></i>
-                            <span data-t="nav-download">Download Profile</span>
-                        </a>
                     </div>
 
-                    <!-- Language Switcher - Top Right Priority -->
+                    <!-- Language Switcher -->
                     <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200 shadow-inner">
                         <button onclick="setLanguage('en')" id="btn-en" class="lang-btn active">EN</button>
                         <button onclick="setLanguage('es')" id="btn-es" class="lang-btn">ES</button>
                     </div>
-
-                    <a href="#contact" class="hidden sm:block bg-[#1e4b8f] text-white px-6 py-3 rounded-2xl hover:bg-blue-800 transition shadow-lg text-xs uppercase tracking-widest" data-t="nav-contact">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative h-[95vh] flex items-center pt-24 overflow-hidden">
+    <section class="relative h-[90vh] flex items-center pt-24 overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="1.jpg" alt="SM Global Facility Exterior" class="w-full h-full object-cover">
             <div class="absolute inset-0 hero-overlay"></div>
@@ -163,18 +140,9 @@
                     <span data-t="hero-title-1">Fast Delivery.</span> <br>
                     <span class="text-yellow-400 italic" data-t="hero-title-2">Perfect Quality.</span>
                 </h1>
-                <p class="text-xl md:text-2xl mb-12 text-slate-200 font-light leading-relaxed" data-t="hero-desc">
+                <p class="text-xl md:text-2xl text-slate-200 font-light leading-relaxed" data-t="hero-desc">
                     A premier garment dye house now operating from a newly built 10,000m² facility in Villa Nueva. We prioritize environmental sustainability and rapid 1-week turnarounds.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-5">
-                    <a href="#contact" class="btn-primary px-10 py-5 font-black rounded-2xl text-lg text-center uppercase tracking-widest" data-t="btn-inquire">Inquire Production</a>
-                    
-                    <!-- PDF Download Button (Hero) -->
-                    <a href="PROFILE_SM_GLOBAL_2026.pdf" download class="px-10 py-5 bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold rounded-2xl text-lg hover:bg-white/20 transition text-center uppercase tracking-widest flex items-center justify-center gap-3">
-                        <i class="fas fa-file-pdf"></i>
-                        <span data-t="nav-download">Download Profile</span>
-                    </a>
-                </div>
             </div>
         </div>
     </section>
@@ -188,7 +156,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Image Cards -->
                 <div class="space-y-4">
                     <div class="img-container aspect-[4/3]"><img src="1.jpg" alt="Villa Nueva Facility"></div>
                     <div class="px-2">
@@ -269,33 +236,41 @@
         </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="py-32 bg-white">
+    <!-- Contact Info Section (Information Only) -->
+    <section class="py-32 bg-white">
         <div class="max-w-6xl mx-auto px-6">
             <div class="bg-[#1e4b8f] rounded-[4rem] p-12 md:p-24 shadow-2xl text-white">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                    <div>
-                        <h2 class="text-5xl font-black mb-8 italic" data-t="cont-title">Partner with <br>SM Global S.A.</h2>
+                <div class="max-w-2xl">
+                    <h2 class="text-5xl font-black mb-12 italic" data-t="cont-title">SM Global S.A. <br>Guatemala</h2>
+                    <div class="space-y-12">
                         <div class="space-y-6">
                             <div class="flex items-center gap-6">
-                                <i class="fas fa-envelope text-yellow-400 text-xl"></i>
-                                <span class="text-xl font-bold">info@smglobaltex.com</span>
+                                <i class="fas fa-envelope text-yellow-400 text-xl flex-shrink-0"></i>
+                                <span class="text-xl font-bold truncate">info@smglobaltex.com</span>
                             </div>
                             <div class="flex items-center gap-6">
-                                <i class="fas fa-phone text-yellow-400 text-xl"></i>
+                                <i class="fas fa-phone text-yellow-400 text-xl flex-shrink-0"></i>
                                 <span class="text-xl font-bold">+502 6631-9000</span>
                             </div>
+                            <div class="flex items-center gap-6">
+                                <i class="fas fa-map-marker-alt text-yellow-400 text-xl flex-shrink-0"></i>
+                                <span class="text-xl font-bold" data-t="gallery-1-title">Villa Nueva Facility</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="bg-white p-12 rounded-[3.5rem] shadow-2xl">
-                        <form id="contact-form" action="https://formspree.io/f/info@smglobaltex.com" method="POST" class="space-y-4">
-                            <input type="text" name="name" required placeholder="Full Name" data-p="name" class="w-full p-5 rounded-2xl bg-slate-100 border-none outline-none text-slate-900 font-medium">
-                            <input type="email" name="email" required placeholder="Business Email" data-p="email" class="w-full p-5 rounded-2xl bg-slate-100 border-none outline-none text-slate-900 font-medium">
-                            <textarea name="message" required placeholder="Production Requirements..." data-p="msg" class="w-full p-5 rounded-2xl bg-slate-100 border-none outline-none text-slate-900 font-medium" rows="4"></textarea>
-                            <button type="submit" class="w-full btn-primary py-6 rounded-2xl text-xl font-black uppercase tracking-widest">
-                                <span data-t="form-submit">Send Inquiry</span>
-                            </button>
-                        </form>
+                        
+                        <!-- Download Profile Section -->
+                        <div class="pt-8 border-t border-white/20">
+                            <p class="text-xs uppercase tracking-[0.3em] font-bold text-slate-300 mb-4" data-t="nav-download-label">Company Resources</p>
+                            <a href="PROFILE_SM_GLOBAL_2026.pdf" download class="inline-flex items-center gap-4 bg-white/10 hover:bg-white/20 border border-white/30 px-8 py-4 rounded-2xl transition group">
+                                <div class="w-10 h-10 bg-yellow-400 rounded-xl flex items-center justify-center text-blue-900 group-hover:scale-110 transition">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="text-left">
+                                    <p class="text-[10px] uppercase tracking-widest font-black text-yellow-400" data-t="nav-download-sub">Full Version</p>
+                                    <p class="text-lg font-bold" data-t="nav-download">Download Profile</p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -304,7 +279,11 @@
 
     <footer class="py-16 bg-slate-50 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-slate-400 text-sm font-bold uppercase tracking-widest" data-t="footer-copy">&copy; 2026 SM Global S.A. | Guatemala. All Rights Reserved.</p>
+            <p class="text-slate-400 text-sm font-bold uppercase tracking-widest mb-4" data-t="footer-copy">&copy; 2026 SM Global S.A. | Guatemala. All Rights Reserved.</p>
+            <div class="flex justify-center gap-8">
+                <a href="#facility" class="text-xs font-bold text-slate-400 hover:text-blue-900 uppercase tracking-widest" data-t="nav-facility">Facility</a>
+                <a href="#gallery" class="text-xs font-bold text-slate-400 hover:text-blue-900 uppercase tracking-widest" data-t="nav-gallery">Gallery</a>
+            </div>
         </div>
     </footer>
 
@@ -314,13 +293,13 @@
                 "nav-slogan": "We revive your colors in a week",
                 "nav-facility": "Facility",
                 "nav-gallery": "Gallery",
-                "nav-contact": "Contact",
                 "nav-download": "Download Profile",
+                "nav-download-label": "Company Resources",
+                "nav-download-sub": "Full Version",
                 "hero-badge": "7 Years of Excellence in Guatemala",
                 "hero-title-1": "Fast Delivery.",
                 "hero-title-2": "Perfect Quality.",
                 "hero-desc": "A premier garment dye house now operating from a newly built 10,000m² facility in Villa Nueva. We prioritize environmental sustainability and rapid 1-week turnarounds.",
-                "btn-inquire": "Inquire Production",
                 "gallery-tag": "Visual Tour",
                 "gallery-title": "Our Industrial Excellence",
                 "gallery-1-title": "Villa Nueva Facility",
@@ -345,21 +324,20 @@
                 "serv-2-desc": "Our largest processing capability, delivering 100,000 pieces daily.",
                 "serv-3-title": "Specialty Effects",
                 "serv-3-desc": "Including Mineral Wash, Pigment Dye, Burnout, and Tie-Dye processing.",
-                "cont-title": "Partner with SM Global S.A.",
-                "form-submit": "Send Inquiry",
+                "cont-title": "SM Global S.A. Guatemala",
                 "footer-copy": "© 2026 SM Global S.A. | Guatemala. All Rights Reserved."
             },
             es: {
                 "nav-slogan": "Revivimos sus colores en una semana",
                 "nav-facility": "Instalaciones",
                 "nav-gallery": "Galería",
-                "nav-contact": "Contacto",
                 "nav-download": "Descargar Perfil",
+                "nav-download-label": "Recursos de Empresa",
+                "nav-download-sub": "Versión Completa",
                 "hero-badge": "7 Años de Excelencia en Guatemala",
                 "hero-title-1": "Entrega Rápida.",
                 "hero-title-2": "Calidad Perfecta.",
                 "hero-desc": "Una tintorería de prendas líder que ahora opera desde una planta nueva de 10,000m² en Villa Nueva. Priorizamos la sostenibilidad ambiental y entregas rápidas en 1 semana.",
-                "btn-inquire": "Solicitar Producción",
                 "gallery-tag": "Recorrido Visual",
                 "gallery-title": "Nuestra Excelencia Industrial",
                 "gallery-1-title": "Planta Villa Nueva",
@@ -384,25 +362,15 @@
                 "serv-2-desc": "Nuestra mayor capacidad de procesamiento, entregando 100,000 piezas diarias.",
                 "serv-3-title": "Efectos Especiales",
                 "serv-3-desc": "Incluyendo Mineral Wash, Pigment Dye, Burnout y procesos de Tie-Dye.",
-                "cont-title": "Asóciese con SM Global S.A.",
-                "form-submit": "Enviar Consulta",
+                "cont-title": "SM Global S.A. Guatemala",
                 "footer-copy": "© 2026 SM Global S.A. | Guatemala. Todos los derechos reservados."
             }
-        };
-
-        const placeholders = {
-            en: { name: "Full Name", email: "Business Email", msg: "Production Requirements..." },
-            es: { name: "Nombre Completo", email: "Correo Empresarial", msg: "Requerimientos de Producción..." }
         };
 
         function setLanguage(lang) {
             document.querySelectorAll('[data-t]').forEach(el => {
                 const key = el.getAttribute('data-t');
                 if (translations[lang][key]) { el.textContent = translations[lang][key]; }
-            });
-            document.querySelectorAll('[data-p]').forEach(el => {
-                const key = el.getAttribute('data-p');
-                if (placeholders[lang][key]) { el.placeholder = placeholders[lang][key]; }
             });
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
             document.getElementById('btn-es').classList.toggle('active', lang === 'es');
