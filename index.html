@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SM Global S.A. | Advanced Garment Dyeing Guatemala</title>
+    <title>SM Global S.A. | High-Precision Garment Dyeing Guatemala</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -17,7 +17,7 @@
         }
 
         .hero-overlay {
-            background: linear-gradient(rgba(30, 75, 143, 0.85), rgba(15, 23, 42, 0.95));
+            background: linear-gradient(rgba(30, 75, 143, 0.75), rgba(15, 23, 42, 0.9));
         }
 
         .glass-nav {
@@ -27,39 +27,75 @@
 
         .img-container {
             overflow: hidden;
-            border-radius: 1rem;
+            border-radius: 2rem;
             position: relative;
+            background: #e2e8f0;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
         }
 
         .img-container img {
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .img-container:hover img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
         .feature-card {
-            transition: all 0.3s ease;
-            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            border-color: var(--brand-blue);
+            transform: translateY(-12px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--brand-yellow);
+        }
+        
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .globe-spin {
+            animation: rotate-slow 40s linear infinite;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        .btn-primary {
+            background: var(--brand-yellow);
+            color: #1e4b8f;
+            transition: all 0.3s ease;
         }
 
-        /* SVG Logo Styling */
-        .logo-svg {
-            width: 48px;
-            height: 48px;
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px -5px rgba(250, 204, 21, 0.4);
+        }
+
+        #success-message {
+            display: none;
+        }
+
+        .lang-btn {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .lang-btn.active {
+            background: var(--brand-blue);
+            color: white;
+        }
+        .lang-btn:not(.active) {
+            color: #64748b;
+        }
+        .lang-btn:not(.active):hover {
+            background: #f1f5f9;
         }
     </style>
 </head>
@@ -68,145 +104,316 @@
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 glass-nav shadow-sm border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-24 items-center">
+            <div class="flex justify-between h-24 items-center gap-4">
                 
-                <!-- LOGO TOP LEFT -->
-                <div class="logo-container">
-                    <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="45" fill="#1e4b8f" />
-                        <path d="M50 15 L50 85 M15 50 L85 50" stroke="#facc15" stroke-width="2" opacity="0.5"/>
-                        <ellipse cx="50" cy="50" rx="35" ry="15" fill="none" stroke="white" stroke-width="3" transform="rotate(-45 50 50)"/>
-                        <ellipse cx="50" cy="50" rx="35" ry="15" fill="none" stroke="#facc15" stroke-width="3" transform="rotate(45 50 50)"/>
-                        <circle cx="50" cy="50" r="10" fill="white" />
-                        <text x="50" y="56" font-family="Arial" font-weight="bold" font-size="12" text-anchor="middle" fill="#1e4b8f">SM</text>
-                    </svg>
-                    <div class="flex flex-col leading-none">
-                        <span class="text-2xl font-black text-[#1e4b8f] tracking-tighter italic">SM GLOBAL S.A.</span>
-                        <span class="text-[10px] font-bold tracking-[0.4em] text-slate-400 mt-1 uppercase">Guatemala</span>
+                <!-- BRAND LOGO & TEXT IN ONE LINE -->
+                <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+                    <div class="h-10 w-10 sm:h-14 sm:w-14 bg-[#1e4b8f] rounded-full flex-shrink-0 flex items-center justify-center shadow-lg p-1.5 border-2 border-slate-100">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="globe-spin">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="white" stroke-width="1.5" opacity="0.3"/>
+                            <ellipse cx="50" cy="50" rx="42" ry="14" fill="none" stroke="white" stroke-width="2.5" transform="rotate(-45 50 50)"/>
+                            <ellipse cx="50" cy="50" rx="42" ry="14" fill="none" stroke="#facc15" stroke-width="2.5" transform="rotate(45 50 50)"/>
+                            <circle cx="50" cy="50" r="7" fill="white" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-col min-w-0">
+                        <h1 class="text-lg sm:text-2xl font-black text-[#1e4b8f] tracking-tighter italic uppercase whitespace-nowrap">SM Global S.A.</h1>
+                        <p class="text-[7px] sm:text-[9px] font-bold tracking-[0.15em] sm:tracking-[0.4em] text-slate-400 uppercase italic whitespace-nowrap overflow-hidden text-ellipsis" data-t="nav-slogan">We revive your colors in a week</p>
                     </div>
                 </div>
 
-                <div class="hidden md:flex items-center space-x-8 font-bold text-slate-600">
-                    <a href="#about" class="hover:text-blue-800 transition text-sm">About</a>
-                    <a href="#facility" class="hover:text-blue-800 transition text-sm">Facility</a>
-                    <a href="#services" class="hover:text-blue-800 transition text-sm">Services</a>
-                    <a href="#contact" class="bg-[#1e4b8f] text-white px-6 py-3 rounded-xl hover:bg-blue-800 transition shadow-md text-sm">Contact Us</a>
+                <div class="flex items-center space-x-4 sm:space-x-8 font-bold text-slate-600">
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="#facility" class="hover:text-blue-800 transition text-xs uppercase tracking-widest" data-t="nav-facility">Facility</a>
+                        <a href="#gallery" class="hover:text-blue-800 transition text-xs uppercase tracking-widest" data-t="nav-gallery">Gallery</a>
+                        
+                        <!-- PDF Download Button (Nav) -->
+                        <a href="PROFILE_SM_GLOBAL_2026.pdf" download class="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition text-[10px] uppercase tracking-widest border-l pl-6 border-slate-200">
+                            <i class="fas fa-file-pdf"></i>
+                            <span data-t="nav-download">Download Profile</span>
+                        </a>
+                    </div>
+
+                    <!-- Language Switcher - Top Right Priority -->
+                    <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200 shadow-inner">
+                        <button onclick="setLanguage('en')" id="btn-en" class="lang-btn active">EN</button>
+                        <button onclick="setLanguage('es')" id="btn-es" class="lang-btn">ES</button>
+                    </div>
+
+                    <a href="#contact" class="hidden sm:block bg-[#1e4b8f] text-white px-6 py-3 rounded-2xl hover:bg-blue-800 transition shadow-lg text-xs uppercase tracking-widest" data-t="nav-contact">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative h-screen flex items-center pt-20 overflow-hidden">
+    <section class="relative h-[95vh] flex items-center pt-24 overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="1772594185972.jpg" alt="SM Global Industrial Facility" class="w-full h-full object-cover">
+            <img src="1.jpg" alt="SM Global Facility Exterior" class="w-full h-full object-cover">
             <div class="absolute inset-0 hero-overlay"></div>
         </div>
         
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-white">
             <div class="max-w-3xl">
-                <div class="inline-flex items-center space-x-2 px-3 py-1 mb-6 rounded-full bg-blue-500/20 border border-blue-400/30 backdrop-blur-sm">
-                    <span class="text-xs font-bold tracking-widest uppercase">Central America's Cleanest Dye House</span>
+                <div class="inline-flex items-center space-x-2 px-4 py-2 mb-8 rounded-full bg-blue-500/20 border border-blue-300/30 backdrop-blur-md">
+                    <span class="h-2 w-2 rounded-full bg-yellow-400 animate-pulse"></span>
+                    <span class="text-xs font-bold tracking-widest uppercase" data-t="hero-badge">7 Years of Excellence in Guatemala</span>
                 </div>
-                <h1 class="text-5xl md:text-7xl font-black mb-6 leading-[1.1]">
-                    Advanced Dyeing.<br><span class="text-yellow-400">Pure Precision.</span>
+                <h1 class="text-5xl md:text-8xl font-black mb-8 leading-[1.05]">
+                    <span data-t="hero-title-1">Fast Delivery.</span> <br>
+                    <span class="text-yellow-400 italic" data-t="hero-title-2">Perfect Quality.</span>
                 </h1>
-                <p class="text-lg md:text-xl mb-10 text-slate-300 font-light leading-relaxed">
-                    A newly built facility in Guatemala with brand-new machinery and pharmaceutical-grade cleanliness for flawless garment production.
+                <p class="text-xl md:text-2xl mb-12 text-slate-200 font-light leading-relaxed" data-t="hero-desc">
+                    A premier garment dye house now operating from a newly built 10,000m² facility in Villa Nueva. We prioritize environmental sustainability and rapid 1-week turnarounds.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#contact" class="px-8 py-4 bg-yellow-400 text-blue-900 font-black rounded-xl text-lg hover:bg-yellow-300 transition-all shadow-lg text-center">Inquire Now</a>
-                    <a href="#facility" class="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold rounded-xl text-lg hover:bg-white/20 transition text-center">View Facility</a>
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <a href="#contact" class="btn-primary px-10 py-5 font-black rounded-2xl text-lg text-center uppercase tracking-widest" data-t="btn-inquire">Inquire Production</a>
+                    
+                    <!-- PDF Download Button (Hero) -->
+                    <a href="PROFILE_SM_GLOBAL_2026.pdf" download class="px-10 py-5 bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold rounded-2xl text-lg hover:bg-white/20 transition text-center uppercase tracking-widest flex items-center justify-center gap-3">
+                        <i class="fas fa-file-pdf"></i>
+                        <span data-t="nav-download">Download Profile</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Image Grid with "Clean Environment" focus -->
-    <section id="facility" class="py-24 bg-white">
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-32 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-blue-900 font-black text-sm uppercase tracking-[0.3em] mb-4">Infrastructure</h2>
-                <h3 class="text-4xl font-extrabold text-slate-900">Modern Equipment. Controlled Climate.</h3>
+            <div class="text-center mb-20">
+                <h2 class="text-blue-900 font-black text-sm uppercase tracking-[0.4em] mb-4" data-t="gallery-tag">Visual Tour</h2>
+                <h3 class="text-4xl md:text-5xl font-extrabold text-slate-900" data-t="gallery-title">Our Industrial Excellence</h3>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                <div class="space-y-8">
-                    <div class="img-container shadow-xl">
-                        <img src="1772594187194.jpg" alt="Organized Facility" class="w-full h-80 object-cover">
-                    </div>
-                    <div>
-                        <h4 class="text-2xl font-bold text-blue-900 mb-4">The Clean Environment Difference</h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            Dust and lint are the enemies of high-quality dyeing. Our facility features sealed epoxy floors, high-efficiency air filtration, and strict hygiene protocols to ensure that your garments remain pristine from bath to dryer.
-                        </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Image Cards -->
+                <div class="space-y-4">
+                    <div class="img-container aspect-[4/3]"><img src="1.jpg" alt="Villa Nueva Facility"></div>
+                    <div class="px-2">
+                        <h4 class="font-bold text-blue-900 text-lg" data-t="gallery-1-title">Villa Nueva Facility</h4>
+                        <p class="text-slate-500 text-sm" data-t="gallery-1-desc">Strategic 10,000m² site located near Guatemala City for rapid logistics.</p>
                     </div>
                 </div>
-                <div class="space-y-8">
-                    <div>
-                        <h4 class="text-2xl font-bold text-blue-900 mb-4">State-of-the-Art Machinery</h4>
-                        <p class="text-slate-600 leading-relaxed mb-6">
-                            Equipped with 2024 high-capacity industrial dyeing vessels. Our tech allows for precision color matching and automated chemical dosing, reducing human error and ensuring batch-to-batch consistency.
-                        </p>
+                <div class="space-y-4">
+                    <div class="img-container aspect-[4/3]"><img src="2.jpg" alt="Production Floor"></div>
+                    <div class="px-2">
+                        <h4 class="font-bold text-blue-900 text-lg" data-t="gallery-2-title">Lint-Free Production</h4>
+                        <p class="text-slate-500 text-sm" data-t="gallery-2-desc">Strict quality management and environmental leading standards.</p>
                     </div>
-                    <div class="img-container shadow-xl">
-                        <img src="1772594184642.jpg" alt="Modern Machinery" class="w-full h-80 object-cover">
+                </div>
+                <div class="space-y-4">
+                    <div class="img-container aspect-[4/3]"><img src="3.jpg" alt="Dyeing Vessel"></div>
+                    <div class="px-2">
+                        <h4 class="font-bold text-blue-900 text-lg" data-t="gallery-3-title">High-Volume Capacity</h4>
+                        <p class="text-slate-500 text-sm" data-t="gallery-3-desc">2,000,000 pieces monthly capacity across all dyeing types.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Capabilities -->
-    <section id="services" class="py-24 bg-slate-900 text-white">
+    <!-- Facility -->
+    <section id="facility" class="py-32 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-                <div class="p-8 border border-slate-700 rounded-2xl">
-                    <i class="fas fa-tint text-yellow-400 text-3xl mb-6"></i>
-                    <h5 class="text-xl font-bold mb-3">Reactive Dyeing</h5>
-                    <p class="text-slate-400 text-sm">High-performance permanent color for retail-ready apparel.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div class="space-y-12">
+                    <div class="inline-block px-4 py-1 rounded bg-blue-100 text-blue-900 font-bold text-xs uppercase tracking-widest" data-t="fac-tag">Production Power</div>
+                    <h2 class="text-4xl md:text-6xl font-black text-slate-900 leading-tight" data-t="fac-title">Scale Without <br>Compromise.</h2>
+                    
+                    <div class="bg-slate-50 p-12 rounded-[3rem] border border-slate-100 shadow-sm">
+                        <h4 class="text-2xl font-bold text-blue-900 mb-6 flex items-center">
+                            <i class="fas fa-industry mr-4 text-yellow-500"></i><span data-t="fac-card-title">Daily Processing Power</span>
+                        </h4>
+                        <p class="text-slate-600 leading-relaxed text-lg mb-8" data-t="fac-card-desc">
+                            Our facility is optimized for high-volume orders with specialized lines for diverse treatment types.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 font-bold text-blue-900">
+                            <div class="flex items-center gap-3"><i class="fas fa-check-circle text-yellow-500"></i> <span data-t="fac-stat-1">100k pcs/day Capacity</span></div>
+                            <div class="flex items-center gap-3"><i class="fas fa-check-circle text-yellow-500"></i> <span data-t="fac-stat-2">2M pcs/month Scale</span></div>
+                            <div class="flex items-center gap-3"><i class="fas fa-check-circle text-yellow-500"></i> <span data-t="fac-stat-3">New Wastewater Plant</span></div>
+                            <div class="flex items-center gap-3"><i class="fas fa-check-circle text-yellow-500"></i> <span data-t="fac-stat-4">Advanced Laboratory</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-8 border border-slate-700 rounded-2xl">
-                    <i class="fas fa-flask text-yellow-400 text-3xl mb-6"></i>
-                    <h5 class="text-xl font-bold mb-3">Pigment Dyeing</h5>
-                    <p class="text-slate-400 text-sm">Expertly controlled vintage and distressed finishes.</p>
+                <div class="flex items-center justify-center">
+                    <div class="img-container w-full aspect-square"><img src="2.jpg" alt="Production Detail"></div>
                 </div>
-                <div class="p-8 border border-slate-700 rounded-2xl">
-                    <i class="fas fa-wind text-yellow-400 text-3xl mb-6"></i>
-                    <h5 class="text-xl font-bold mb-3">Specialty Washes</h5>
-                    <p class="text-slate-400 text-sm">Enzyme and silicone treatments in a lint-free zone.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-32 bg-slate-950 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h3 class="text-4xl md:text-5xl font-black mb-4 italic" data-t="serv-title">Processing Specialties</h3>
+            <p class="text-slate-400 mb-20 uppercase tracking-widest text-sm font-bold" data-t="serv-tag">Industrial Volume meets Artisanal Quality</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="feature-card p-12 bg-slate-900 rounded-[3rem] text-left">
+                    <i class="fas fa-tint text-3xl text-yellow-400 mb-8 block"></i>
+                    <h5 class="text-2xl font-bold mb-4 italic" data-t="serv-1-title">Reactive Dyeing</h5>
+                    <p class="text-slate-400" data-t="serv-1-desc">High-capacity lines handling up to 80,000 pieces per day with superior fastness.</p>
                 </div>
-                <div class="p-8 border border-slate-700 rounded-2xl">
-                    <i class="fas fa-shield-alt text-yellow-400 text-3xl mb-6"></i>
-                    <h5 class="text-xl font-bold mb-3">Quality Control</h5>
-                    <p class="text-slate-400 text-sm">Multi-point inspection in a bright, clean environment.</p>
+                <div class="feature-card p-12 bg-slate-900 rounded-[3rem] text-left">
+                    <i class="fas fa-water text-3xl text-yellow-400 mb-8 block"></i>
+                    <h5 class="text-2xl font-bold mb-4 italic" data-t="serv-2-title">Silicon Washing</h5>
+                    <p class="text-slate-400" data-t="serv-2-desc">Our largest processing capability, delivering 100,000 pieces daily.</p>
+                </div>
+                <div class="feature-card p-12 bg-slate-900 rounded-[3rem] text-left">
+                    <i class="fas fa-vial text-3xl text-yellow-400 mb-8 block"></i>
+                    <h5 class="text-2xl font-bold mb-4 italic" data-t="serv-3-title">Specialty Effects</h5>
+                    <p class="text-slate-400" data-t="serv-3-desc">Including Mineral Wash, Pigment Dye, Burnout, and Tie-Dye processing.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="bg-blue-900 rounded-[3rem] p-12 text-center text-white relative overflow-hidden">
-                <h2 class="text-4xl font-black mb-6">Start Production</h2>
-                <p class="text-blue-100 mb-10 max-w-lg mx-auto">Contact us for pricing and to schedule a tour of the facility in Guatemala.</p>
-                
-                <form class="space-y-4 text-left max-w-md mx-auto">
-                    <input type="text" placeholder="Name" class="w-full px-6 py-4 rounded-xl text-slate-900 border-none">
-                    <input type="email" placeholder="Email" class="w-full px-6 py-4 rounded-xl text-slate-900 border-none">
-                    <textarea placeholder="Tell us about your project..." class="w-full px-6 py-4 rounded-xl text-slate-900 border-none" rows="3"></textarea>
-                    <button type="button" class="w-full bg-yellow-400 text-blue-900 font-black py-4 rounded-xl hover:bg-yellow-300 transition uppercase tracking-widest">Send Inquiry</button>
-                </form>
+    <section id="contact" class="py-32 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="bg-[#1e4b8f] rounded-[4rem] p-12 md:p-24 shadow-2xl text-white">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                    <div>
+                        <h2 class="text-5xl font-black mb-8 italic" data-t="cont-title">Partner with <br>SM Global S.A.</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-6">
+                                <i class="fas fa-envelope text-yellow-400 text-xl"></i>
+                                <span class="text-xl font-bold">info@smglobaltex.com</span>
+                            </div>
+                            <div class="flex items-center gap-6">
+                                <i class="fas fa-phone text-yellow-400 text-xl"></i>
+                                <span class="text-xl font-bold">+502 6631-9000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-12 rounded-[3.5rem] shadow-2xl">
+                        <form id="contact-form" action="https://formspree.io/f/info@smglobaltex.com" method="POST" class="space-y-4">
+                            <input type="text" name="name" required placeholder="Full Name" data-p="name" class="w-full p-5 rounded-2xl bg-slate-100 border-none outline-none text-slate-900 font-medium">
+                            <input type="email" name="email" required placeholder="Business Email" data-p="email" class="w-full p-5 rounded-2xl bg-slate-100 border-none outline-none text-slate-900 font-medium">
+                            <textarea name="message" required placeholder="Production Requirements..." data-p="msg" class="w-full p-5 rounded-2xl bg-slate-100 border-none outline-none text-slate-900 font-medium" rows="4"></textarea>
+                            <button type="submit" class="w-full btn-primary py-6 rounded-2xl text-xl font-black uppercase tracking-widest">
+                                <span data-t="form-submit">Send Inquiry</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 bg-slate-50 border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 text-center text-slate-400 text-sm">
-            <p>&copy; 2024 SM Global S.A. | Guatemala. Newly Built Facility.</p>
+    <footer class="py-16 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-400 text-sm font-bold uppercase tracking-widest" data-t="footer-copy">&copy; 2026 SM Global S.A. | Guatemala. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <script>
+        const translations = {
+            en: {
+                "nav-slogan": "We revive your colors in a week",
+                "nav-facility": "Facility",
+                "nav-gallery": "Gallery",
+                "nav-contact": "Contact",
+                "nav-download": "Download Profile",
+                "hero-badge": "7 Years of Excellence in Guatemala",
+                "hero-title-1": "Fast Delivery.",
+                "hero-title-2": "Perfect Quality.",
+                "hero-desc": "A premier garment dye house now operating from a newly built 10,000m² facility in Villa Nueva. We prioritize environmental sustainability and rapid 1-week turnarounds.",
+                "btn-inquire": "Inquire Production",
+                "gallery-tag": "Visual Tour",
+                "gallery-title": "Our Industrial Excellence",
+                "gallery-1-title": "Villa Nueva Facility",
+                "gallery-1-desc": "Strategic 10,000m² site located near Guatemala City for rapid logistics.",
+                "gallery-2-title": "Lint-Free Production",
+                "gallery-2-desc": "Strict quality management and environmental leading standards.",
+                "gallery-3-title": "High-Volume Capacity",
+                "gallery-3-desc": "2,000,000 pieces monthly capacity across all dyeing types.",
+                "fac-tag": "Production Power",
+                "fac-title": "Scale Without Compromise.",
+                "fac-card-title": "Daily Processing Power",
+                "fac-card-desc": "Our facility is optimized for high-volume orders with specialized lines for diverse treatment types.",
+                "fac-stat-1": "100k pcs/day Capacity",
+                "fac-stat-2": "2M pcs/month Scale",
+                "fac-stat-3": "New Wastewater Plant",
+                "fac-stat-4": "Advanced Laboratory",
+                "serv-title": "Processing Specialties",
+                "serv-tag": "Industrial Volume meets Artisanal Quality",
+                "serv-1-title": "Reactive Dyeing",
+                "serv-1-desc": "High-capacity lines handling up to 80,000 pieces per day with superior fastness.",
+                "serv-2-title": "Silicon Washing",
+                "serv-2-desc": "Our largest processing capability, delivering 100,000 pieces daily.",
+                "serv-3-title": "Specialty Effects",
+                "serv-3-desc": "Including Mineral Wash, Pigment Dye, Burnout, and Tie-Dye processing.",
+                "cont-title": "Partner with SM Global S.A.",
+                "form-submit": "Send Inquiry",
+                "footer-copy": "© 2026 SM Global S.A. | Guatemala. All Rights Reserved."
+            },
+            es: {
+                "nav-slogan": "Revivimos sus colores en una semana",
+                "nav-facility": "Instalaciones",
+                "nav-gallery": "Galería",
+                "nav-contact": "Contacto",
+                "nav-download": "Descargar Perfil",
+                "hero-badge": "7 Años de Excelencia en Guatemala",
+                "hero-title-1": "Entrega Rápida.",
+                "hero-title-2": "Calidad Perfecta.",
+                "hero-desc": "Una tintorería de prendas líder que ahora opera desde una planta nueva de 10,000m² en Villa Nueva. Priorizamos la sostenibilidad ambiental y entregas rápidas en 1 semana.",
+                "btn-inquire": "Solicitar Producción",
+                "gallery-tag": "Recorrido Visual",
+                "gallery-title": "Nuestra Excelencia Industrial",
+                "gallery-1-title": "Planta Villa Nueva",
+                "gallery-1-desc": "Sitio estratégico de 10,000m² ubicado cerca de la Ciudad de Guatemala para logística rápida.",
+                "gallery-2-title": "Producción Libre de Pelusa",
+                "gallery-2-desc": "Gestión de calidad estricta y estándares ambientales de vanguardia.",
+                "gallery-3-title": "Capacidad de Alto Volumen",
+                "gallery-3-desc": "Capacidad mensual de 2,000,000 de piezas en todos los tipos de teñido.",
+                "fac-tag": "Poder de Producción",
+                "fac-title": "Escala Sin Compromisos.",
+                "fac-card-title": "Potencia de Procesamiento Diario",
+                "fac-card-desc": "Nuestras instalaciones están optimizadas para pedidos de gran volumen con líneas especializadas.",
+                "fac-stat-1": "Capacidad 100k pzas/día",
+                "fac-stat-2": "Escala 2M pzas/mes",
+                "fac-stat-3": "Planta de Aguas Residuales",
+                "fac-stat-4": "Laboratorio Avanzado",
+                "serv-title": "Especialidades de Procesamiento",
+                "serv-tag": "Volumen Industrial con Calidad Artesanal",
+                "serv-1-title": "Teñido Reactivo",
+                "serv-1-desc": "Líneas de alta capacidad que manejan hasta 80,000 piezas por día con solidez superior.",
+                "serv-2-title": "Lavado de Silicona",
+                "serv-2-desc": "Nuestra mayor capacidad de procesamiento, entregando 100,000 piezas diarias.",
+                "serv-3-title": "Efectos Especiales",
+                "serv-3-desc": "Incluyendo Mineral Wash, Pigment Dye, Burnout y procesos de Tie-Dye.",
+                "cont-title": "Asóciese con SM Global S.A.",
+                "form-submit": "Enviar Consulta",
+                "footer-copy": "© 2026 SM Global S.A. | Guatemala. Todos los derechos reservados."
+            }
+        };
+
+        const placeholders = {
+            en: { name: "Full Name", email: "Business Email", msg: "Production Requirements..." },
+            es: { name: "Nombre Completo", email: "Correo Empresarial", msg: "Requerimientos de Producción..." }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-t]').forEach(el => {
+                const key = el.getAttribute('data-t');
+                if (translations[lang][key]) { el.textContent = translations[lang][key]; }
+            });
+            document.querySelectorAll('[data-p]').forEach(el => {
+                const key = el.getAttribute('data-p');
+                if (placeholders[lang][key]) { el.placeholder = placeholders[lang][key]; }
+            });
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLang') || 'en';
+            setLanguage(savedLang);
+        });
+    </script>
 </body>
 </html>
